@@ -16,7 +16,7 @@ function RetrivaLogo({ className }: Props) {
       version="1.1"
       viewBox="0 0 1029.33 288.68"
       xmlSpace="preserve"
-      height="75"
+      height="55"
     >
       <path
         fill={theme.palette.text.primary}

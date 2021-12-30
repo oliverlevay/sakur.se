@@ -5,7 +5,7 @@ const RedeyeLogo = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height="75"
+      height="55"
       fill="none"
       viewBox="0 0 325 86"
     >

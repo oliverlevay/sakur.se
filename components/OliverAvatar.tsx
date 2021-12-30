@@ -5,7 +5,7 @@ const OliverAvatar = () => {
   return (
     <Stack alignItems="center" width="fit-content" title="Click me!">
       <Avatar
-        sx={{ height: { xs: 132, md: 144 }, width: { xs: 132, md: 144 } }}
+        sx={{ height: { xs: 120, md: 144 }, width: { xs: 120, md: 144 } }}
         src="/images/oliver-avatar.jpg"
       ></Avatar>
       <Typography
