@@ -6,13 +6,13 @@ import { Button, Stack } from "@mui/material";
 const Social = () => {
   return (
     <Stack direction="row">
-      <Button href="https://github.com/oliverlevay" target="_blank">
+      <Button href="https://github.com/AdamTovatt" target="_blank">
         <GitHubIcon />
       </Button>
-      <Button href="https://twitter.com/oliverlevays" target="_blank">
-        <TwitterIcon />
-      </Button>
-      <Button href="www.linkedin.com/in/oliver-levay" target="_blank">
+      <Button
+        href="https://www.linkedin.com/in/adam-tovatt-a766491b1/"
+        target="_blank"
+      >
         <LinkedInIcon />
       </Button>
     </Stack>

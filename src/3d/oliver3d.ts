@@ -2,7 +2,14 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { Vector3 } from "three";
 
-const Run3DSpace = () => {
+let animating = true;
+
+export const stopAnimating = () => {
+  animating = false;
+};
+
+export const startAnimating = (canvas: Element) => {
+  animating = true;
   const isDesktop = window.innerWidth > 768;
   let mixer = new THREE.AnimationMixer(new THREE.Object3D());
   const clock = new THREE.Clock();
@@ -61,8 +68,6 @@ const Run3DSpace = () => {
       pivot.position.lerp(new Vector3(0, 0, 0), 0.1);
     }
   });
-
-  const canvas = document.querySelector("#canvas3d") as Element;
 
   const renderer = new THREE.WebGL1Renderer({
     alpha: true,
@@ -143,14 +148,13 @@ const Run3DSpace = () => {
   );
 
   function animate() {
-    requestAnimationFrame(animate);
-    if (oliver) {
-      renderer.render(scene, camera);
-      mixer.update(clock.getDelta());
+    if (animating) {
+      requestAnimationFrame(animate);
+      if (oliver) {
+        renderer.render(scene, camera);
+        mixer.update(clock.getDelta());
+      }
     }
   }
-
   animate();
 };
-
-export default Run3DSpace;
