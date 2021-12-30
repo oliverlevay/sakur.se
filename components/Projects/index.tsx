@@ -27,7 +27,7 @@ const Projects = () => {
         <RetrivaLogo />
       </Button>
       <Button
-        href="https://retriva.se/"
+        href="https://www.redeye.se/"
         target="_blank"
         style={{
           marginBottom: "1rem",
