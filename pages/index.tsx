@@ -30,7 +30,7 @@ const Home: NextPage = () => {
           />
           <meta
             property="og:image"
-            content="https://www.sakur.se/images/sakur-logo.png"
+            content="https://www.sakur.se/images/sakur-slogan.png"
           />
         </Head>
         <Stack spacing={1}>
