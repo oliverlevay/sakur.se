@@ -1,9 +1,16 @@
-import { Stack, Typography, Button, IconButton, useTheme } from "@mui/material";
-import Link from "next/link";
-import Image from "next/image";
-import LightModeIcon from "@mui/icons-material/LightMode";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
-import { useColorMode } from "pages/_app";
+import {
+  Stack,
+  Typography,
+  Button,
+  IconButton,
+  useTheme,
+  Divider,
+} from '@mui/material';
+import Link from 'next/link';
+import Image from 'next/image';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import { useColorMode } from 'pages/_app';
 
 const Layout = ({
   children,
@@ -17,27 +24,28 @@ const Layout = ({
   return (
     <Stack
       component="main"
+      role="main"
       sx={{
         zIndex: 1,
-        padding: { xs: "1rem 2rem", md: "5rem 10rem" },
-        position: "absolute",
+        padding: { xs: '1rem 2rem', md: '2rem 10rem' },
+        position: 'absolute',
         h1: {
-          fontSize: "4.5rem",
-          fontWeight: "700",
+          fontSize: '4.5rem',
+          fontWeight: '700',
         },
         h2: {
-          fontSize: "2rem",
+          fontSize: '2rem',
         },
         h3: {
-          fontSize: "2rem",
+          fontSize: '2rem',
         },
         a: {
-          textDecoration: "none",
+          textDecoration: 'none',
         },
       }}
     >
       <Stack direction="row" alignItems="center">
-        <Typography style={{ marginRight: "1rem" }} variant="h1">
+        <Typography style={{ marginRight: '1rem' }} variant="h1">
           {title}
         </Typography>
         <Link href="/">
@@ -46,10 +54,16 @@ const Layout = ({
           </Button>
         </Link>
         <IconButton onClick={toggleColorMode}>
-          {theme.palette.mode === "dark" ? <LightModeIcon /> : <DarkModeIcon />}
+          {theme.palette.mode === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
         </IconButton>
       </Stack>
-      {children}
+      <Stack>{children}</Stack>
+      <Stack>
+        <Divider sx={{ margin: '1rem 0' }} />
+        <Typography variant="body2" color="text.secondary">
+          Copyright © {new Date().getFullYear()} Sakur AB.
+        </Typography>
+      </Stack>
     </Stack>
   );
 };

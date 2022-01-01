@@ -1,12 +1,12 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import Link from "components/Link";
-import Layout from "components/Layout";
-import { Typography, Stack, Card, Button } from "@mui/material";
-import { styled } from "@mui/system";
-import OliverAvatar from "components/OliverAvatar";
-import AdamAvatar from "components/AdamAvatar";
-import Projects from "components/Projects";
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Link from 'components/Link';
+import Layout from 'components/Layout';
+import { Typography, Stack, Card, Button } from '@mui/material';
+import { styled } from '@mui/system';
+import OliverAvatar from 'components/OliverAvatar';
+import AdamAvatar from 'components/AdamAvatar';
+import Projects from 'components/Projects';
 
 const MyCard = styled(Card)`
   padding: 2rem;
@@ -21,10 +21,21 @@ const Home: NextPage = () => {
       <Layout title="Sakur">
         <Head>
           <title>Sakur</title>
+          <meta property="og:title" content="Sakur" />
+          <meta property="og:url" content="https://www.sakur.se/" />
+          <meta
+            property="og:description"
+            content="Bringing ideas to life. We help our
+            clients with all their application needs."
+          />
+          <meta
+            property="og:image"
+            content="https://www.sakur.se/images/sakur-logo.png"
+          />
         </Head>
         <Stack spacing={1}>
           <Typography variant="h2">Bringing ideas to life.</Typography>
-          <Typography variant="h3" style={{ marginTop: "1rem" }}>
+          <Typography variant="h3" style={{ marginTop: '1rem' }}>
             Lead developers
           </Typography>
           <Stack direction="row" spacing={3}>
