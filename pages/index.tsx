@@ -32,6 +32,7 @@ const Home: NextPage = () => {
             property="og:image"
             content="https://www.sakur.se/images/sakur-slogan.png"
           />
+          <meta name="twitter:card" content="summary_large_image"></meta>
         </Head>
         <Stack spacing={1}>
           <Typography variant="h2">Bringing ideas to life.</Typography>
