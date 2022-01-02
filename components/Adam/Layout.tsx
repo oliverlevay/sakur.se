@@ -1,8 +1,8 @@
-import Head from "next/head";
-import Layout from "components/Layout";
-import { Typography, Stack } from "@mui/material";
-import Link from "next/link";
-import Social from "./Social";
+import Head from 'next/head';
+import Layout from 'components/Layout';
+import { Typography, Stack } from '@mui/material';
+import Link from 'next/link';
+import Social from './Social';
 
 const AdamLayout = ({
   children,
@@ -10,7 +10,7 @@ const AdamLayout = ({
   children: JSX.Element | JSX.Element[];
 }) => {
   return (
-    <Layout title="Adam">
+    <Layout title="Adam" location="Adam">
       <Head>
         <title>Adam | Sakur</title>
       </Head>

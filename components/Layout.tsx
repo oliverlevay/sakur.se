@@ -5,8 +5,9 @@ import {
   IconButton,
   useTheme,
   Divider,
+  Breadcrumbs,
 } from '@mui/material';
-import Link from 'next/link';
+import Link from 'components/Link';
 import Image from 'next/image';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
@@ -15,9 +16,11 @@ import { useColorMode } from 'pages/_app';
 const Layout = ({
   children,
   title,
+  location,
 }: {
   children: JSX.Element | JSX.Element[];
   title: string;
+  location?: string;
 }) => {
   const theme = useTheme();
   const { toggleColorMode } = useColorMode();
@@ -45,16 +48,23 @@ const Layout = ({
         },
       }}
     >
-      <Stack direction="row" alignItems="center">
-        <Typography style={{ marginRight: '1rem' }} variant="h1">
-          {title}
-        </Typography>
-        <Link href="/">
-          <Button>
+      <Stack direction="row" width="100%" justifyContent="space-between">
+        <Stack>
+          {location && (
+            <Breadcrumbs aria-label="breadcrumb">
+              <Link underline="hover" color="inherit" href="/">
+                Home
+              </Link>
+              <Typography color="text.primary">{location}</Typography>
+            </Breadcrumbs>
+          )}
+          <Stack direction="row" alignItems="center" spacing={1}>
             <Image src="/images/sakur-logo.png" width={64} height={64} />
-          </Button>
-        </Link>
-        <IconButton onClick={toggleColorMode}>
+            <Typography variant="h1">{title}</Typography>
+          </Stack>
+        </Stack>
+
+        <IconButton onClick={toggleColorMode} sx={{ height: 'fit-content' }}>
           {theme.palette.mode === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
         </IconButton>
       </Stack>

@@ -29,7 +29,7 @@ const OliverLayout = ({
   }, [activeTab]);
 
   return (
-    <Layout title="Oliver">
+    <Layout location="Oliver" title="Oliver">
       <Head>
         <title>Oliver at Sakur</title>
         <meta property="og:title" content="Oliver at Sakur" />
