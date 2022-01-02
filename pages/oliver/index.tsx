@@ -1,9 +1,9 @@
-import type { NextPageWithLayout } from "pages/_app";
-import { Typography, Card, Box, useTheme } from "@mui/material";
-import { startAnimating, stopAnimating } from "src/3d/oliver3d";
-import { ReactElement, useEffect } from "react";
-import { styled } from "@mui/system";
-import OliverLayout from "components/Oliver/Layout";
+import type { NextPageWithLayout } from 'pages/_app';
+import { Typography, Card, Box, useTheme } from '@mui/material';
+import { startAnimating, stopAnimating } from 'src/3d/oliver3d';
+import { ReactElement, useEffect } from 'react';
+import { styled } from '@mui/system';
+import OliverLayout from 'components/Oliver/Layout';
 
 const MyCard = styled(Card)`
   max-width: 30rem;
@@ -19,10 +19,10 @@ const Separator = styled(Box)`
 
 const Oliver: NextPageWithLayout = () => {
   useEffect(() => {
-    const canvas = document.createElement("canvas");
-    canvas.style.position = "fixed";
-    canvas.style.bottom = "0";
-    canvas.style.right = "0";
+    const canvas = document.createElement('canvas');
+    canvas.style.position = 'fixed';
+    canvas.style.bottom = '0';
+    canvas.style.right = '0';
     document.body.appendChild(canvas);
     startAnimating(canvas);
     return function cleanup() {
@@ -31,15 +31,9 @@ const Oliver: NextPageWithLayout = () => {
     };
   }, []);
   const theme = useTheme();
-  const cardStyle = {
-    backgroundColor:
-      theme.palette.mode === "light"
-        ? "rgba(255, 255, 255, 0.6)"
-        : "rgba(18, 18, 18, 0.6)",
-  };
   return (
     <>
-      <MyCard style={cardStyle}>
+      <MyCard>
         <Typography variant="h3">About me</Typography>
         <Typography>Hi! I'm glad you found me.</Typography>
         <Typography>
@@ -49,31 +43,31 @@ const Oliver: NextPageWithLayout = () => {
           I especially enjoy creating cool and intuitive user experiences.
         </Typography>
       </MyCard>
-      <MyCard style={cardStyle}>
+      <MyCard>
         <Typography variant="h3">Jamstack</Typography>
         <Typography>
           With "cool" user experiences, good performance is a given. That's why
-          I'm a big fan of modern web frameworks such as{" "}
+          I'm a big fan of modern web frameworks such as{' '}
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://nextjs.org/"
           >
             Next.js
-          </a>{" "}
-          and the{" "}
+          </a>{' '}
+          and the{' '}
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://jamstack.org/"
           >
             Jamstack
-          </a>{" "}
+          </a>{' '}
           architecture.
         </Typography>
       </MyCard>
       <Separator />
-      <MyCard style={cardStyle}>
+      <MyCard>
         <Typography variant="h3">More me</Typography>
         <Typography>This is me in my natural habitat.</Typography>
         <Typography>
@@ -84,7 +78,7 @@ const Oliver: NextPageWithLayout = () => {
           hard time letting go of unresolved issues.
         </Typography>
       </MyCard>
-      <MyCard style={cardStyle}>
+      <MyCard>
         <Typography variant="h3">What user experience?</Typography>
         <Typography>I love giving users a "wow"-experience</Typography>
         <Typography>
@@ -93,16 +87,16 @@ const Oliver: NextPageWithLayout = () => {
         </Typography>
       </MyCard>
       <Separator />
-      <MyCard style={cardStyle}>
+      <MyCard>
         <Typography variant="h3">Modern Websites</Typography>
         <Typography>
-          The world wide web has a lot of websites that are old, slow and dull.
+          The world wide web is full of websites that are old, slow and dull.
         </Typography>
         <Typography>
           I look very much forward to being a part of developing the modern web.
         </Typography>
       </MyCard>
-      <MyCard style={cardStyle}>
+      <MyCard>
         <Typography>
           <Typography variant="h3">Wow, what?</Typography>I want to create
           "wow"-experiences where people think "Wow, that was convenient!" or

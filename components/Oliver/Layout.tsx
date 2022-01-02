@@ -49,7 +49,7 @@ const OliverLayout = ({
 
         <Social />
         <Link href="mailto:oliver@sakur.se">oliver@sakur.se</Link>
-        <Tabs
+        {/*         <Tabs
           value={activeTab}
           onChange={(event, newValue) => {
             setActiveTab(newValue);
@@ -58,7 +58,7 @@ const OliverLayout = ({
         >
           <Tab label="Me" />
           <Tab label="Projects" />
-        </Tabs>
+        </Tabs> */}
         <>{children}</>
       </Stack>
     </Layout>

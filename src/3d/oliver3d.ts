@@ -1,6 +1,6 @@
-import * as THREE from "three";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { Vector3 } from "three";
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { Vector3 } from 'three';
 
 let animating = true;
 
@@ -26,7 +26,11 @@ export const startAnimating = (canvas: Element) => {
     20000
   );
 
-  const cameraDefaults = new Vector3(0, 1, 2);
+  const cameraDefaults = new Vector3(
+    isDesktop ? -0.2 : 0,
+    isDesktop ? 0.96 : 0.9,
+    2
+  );
   if (!characterLoaded) {
     window.scrollTo({ top: 0 });
     camera.position.set(cameraDefaults.x, cameraDefaults.y, cameraDefaults.z);
@@ -37,7 +41,7 @@ export const startAnimating = (canvas: Element) => {
   let office;
 
   let newScroll = window.scrollY;
-  window.addEventListener("scroll", () => {
+  window.addEventListener('scroll', () => {
     //pivot.rotateY(0.01);
     const oldScroll = newScroll;
     newScroll = window.scrollY;
@@ -51,17 +55,11 @@ export const startAnimating = (canvas: Element) => {
     }
     if (scrollY > 810 && scrollY < 2200) {
       //camera.translateZ(scrollDelta * 0.016);
-      camera.position.lerp(
-        new Vector3(cameraDefaults.x + 0.1, cameraDefaults.y, 0.8),
-        0.1
-      );
+      camera.position.lerp(new Vector3(0.1, 1, 0.8), 0.1);
       camera.rotation.set(0, 0, 0);
       pivot.rotation.set(0, 0, 0);
     } else if (scrollY > 2200 && scrollY < 2600) {
-      camera.position.lerp(
-        new Vector3(cameraDefaults.x - 0.05, cameraDefaults.y, 0.8),
-        0.1
-      );
+      camera.position.lerp(new Vector3(cameraDefaults.x * 0.6, 1, 0.8), 0.1);
       pivot.rotateY(scrollDelta * 0.005);
     } else if (scrollY > 2600 && scrollY < 4000) {
       //pivot.rotation.set(3.14, -1.1465, 3.14);
@@ -99,7 +97,7 @@ export const startAnimating = (canvas: Element) => {
 
   const officePositions = { x: 0, y: 0.77, z: 0 };
   loader.load(
-    "models/animated/oliver typing.glb",
+    'models/animated/oliver typing.glb',
     function (gltf) {
       oliver = gltf.scene;
       oliver.traverse(function (object) {
@@ -128,7 +126,7 @@ export const startAnimating = (canvas: Element) => {
   );
 
   loader.load(
-    "models/office/scene.gltf",
+    'models/office/scene.gltf',
     function (gltf) {
       office = gltf.scene;
       office.scale.set(0.003, 0.003, 0.003);
