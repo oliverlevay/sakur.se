@@ -53,15 +53,15 @@ export const startAnimating = (canvas: Element) => {
         0.1
       );
     }
-    if (scrollY > 810 && scrollY < 2200) {
+    if (scrollY > 810 && scrollY < 2130) {
       //camera.translateZ(scrollDelta * 0.016);
-      camera.position.lerp(new Vector3(0.1, 1, 0.8), 0.1);
+      camera.position.lerp(new Vector3(isDesktop ? -0.05 : 0.1, 1, 0.8), 0.1);
       camera.rotation.set(0, 0, 0);
       pivot.rotation.set(0, 0, 0);
-    } else if (scrollY > 2200 && scrollY < 2600) {
-      camera.position.lerp(new Vector3(cameraDefaults.x * 0.6, 1, 0.8), 0.1);
+    } else if (scrollY > 2130 && scrollY < 2530) {
+      camera.position.lerp(new Vector3(isDesktop ? -0.1 : -0.05, 1, 0.8), 0.1);
       pivot.rotateY(scrollDelta * 0.005);
-    } else if (scrollY > 2600 && scrollY < 4000) {
+    } else if (scrollY > 2530 && scrollY < 4000) {
       //pivot.rotation.set(3.14, -1.1465, 3.14);
       pivot.position.lerp(new Vector3(0, 0, 0), 0.1);
     }
