@@ -28,6 +28,7 @@ const Layout = ({
       sx={{
         zIndex: 1,
         padding: { xs: '1rem 2rem', md: '2rem 10rem' },
+        width: '100%',
         position: 'absolute',
         h1: {
           fontSize: '4.5rem',
@@ -57,7 +58,7 @@ const Layout = ({
           {theme.palette.mode === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
         </IconButton>
       </Stack>
-      <Stack>{children}</Stack>
+      {children}
       <Stack>
         <Divider sx={{ margin: '1rem 0' }} />
         <Typography variant="body2" color="text.secondary">

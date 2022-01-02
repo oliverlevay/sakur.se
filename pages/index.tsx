@@ -7,35 +7,35 @@ import { styled } from '@mui/system';
 import OliverAvatar from 'components/OliverAvatar';
 import AdamAvatar from 'components/AdamAvatar';
 import Projects from 'components/Projects';
+import SoftwareEngineer from 'components/illustrations/SoftwareEngineer';
 
-const MyCard = styled(Card)`
-  padding: 2rem;
-  p {
+const MyStack = styled(Stack)`
+  && {
     margin: 1rem 0;
   }
 `;
 
 const Home: NextPage = () => {
   return (
-    <>
-      <Layout title="Sakur">
-        <Head>
-          <title>Sakur</title>
-          <meta property="og:title" content="Sakur" />
-          <meta property="og:url" content="https://www.sakur.se/" />
-          <meta
-            property="og:description"
-            content="Bringing ideas to life. We help our
+    <Layout title="Sakur">
+      <Head>
+        <title>Sakur</title>
+        <meta property="og:title" content="Sakur" />
+        <meta property="og:url" content="https://www.sakur.se/" />
+        <meta
+          property="og:description"
+          content="Bringing ideas to life. We help our
             clients with all their application needs."
-          />
-          <meta
-            property="og:image"
-            content="https://www.sakur.se/images/sakur-slogan.png"
-          />
-          <meta name="twitter:card" content="summary_large_image" />
-        </Head>
-        <Stack spacing={1}>
-          <Typography variant="h2">Bringing ideas to life.</Typography>
+        />
+        <meta
+          property="og:image"
+          content="https://www.sakur.se/images/sakur-slogan.png"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+      <Typography variant="h2">Bringing ideas to life.</Typography>
+      <Stack direction="row" spacing={3}>
+        <Stack spacing={1} width="100%">
           <Typography variant="h3" style={{ marginTop: '1rem' }}>
             Lead developers
           </Typography>
@@ -51,8 +51,7 @@ const Home: NextPage = () => {
               </Button>
             </Link>
           </Stack>
-
-          <MyCard>
+          <MyStack spacing={2}>
             <Typography variant="h3">About us</Typography>
             <Typography>
               Sakur consists of a passionate and talented team. We help our
@@ -62,17 +61,20 @@ const Home: NextPage = () => {
               We are especially comfortable in creating Web Applications and Web
               APIs.
             </Typography>
-          </MyCard>
-          <MyCard>
+          </MyStack>
+          <MyStack spacing={2}>
             <Typography variant="h3">Projects</Typography>
             <Typography>
               Here are some of the projects we have worked on.
             </Typography>
             <Projects />
-          </MyCard>
+          </MyStack>
         </Stack>
-      </Layout>
-    </>
+        <Stack width={{ xs: 0, md: '75%' }}>
+          <SoftwareEngineer />
+        </Stack>
+      </Stack>
+    </Layout>
   );
 };
 
