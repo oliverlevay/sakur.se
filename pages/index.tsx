@@ -7,7 +7,7 @@ import { styled } from '@mui/system';
 import OliverAvatar from 'components/OliverAvatar';
 import AdamAvatar from 'components/AdamAvatar';
 import Projects from 'components/Projects';
-import SoftwareEngineer from 'components/illustrations/SoftwareEngineer';
+import SoftwareEngineer from 'components/Illustrations/SoftwareEngineer';
 
 const MyStack = styled(Stack)`
   && {
