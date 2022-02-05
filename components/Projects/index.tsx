@@ -1,7 +1,8 @@
-import { Button, Stack } from '@mui/material';
-import BliqLogo from './logos/Bliq';
-import RedeyeLogo from './logos/Redeye';
-import RetrivaLogo from './logos/Retriva';
+import { Button, Stack } from "@mui/material";
+import BliqLogo from "./logos/Bliq";
+import RedeyeLogo from "./logos/Redeye";
+import RetrivaLogo from "./logos/Retriva";
+import SRO from "./logos/SRO";
 
 const Projects = () => {
   return (
@@ -10,8 +11,8 @@ const Projects = () => {
         href="https://www.redeye.se/"
         target="_blank"
         style={{
-          marginBottom: '1rem',
-          marginRight: '1rem',
+          marginBottom: "1rem",
+          marginRight: "1rem",
         }}
       >
         <RedeyeLogo />
@@ -20,8 +21,8 @@ const Projects = () => {
         href="https://bliq.tech/"
         target="_blank"
         style={{
-          marginBottom: '1rem',
-          marginRight: '1rem',
+          marginBottom: "1rem",
+          marginRight: "1rem",
         }}
       >
         <BliqLogo />
@@ -30,11 +31,24 @@ const Projects = () => {
         href="https://retriva.se/"
         target="_blank"
         style={{
-          marginBottom: '1rem',
-          marginRight: '1rem',
+          marginBottom: "1rem",
+          marginRight: "1rem",
         }}
       >
         <RetrivaLogo />
+      </Button>
+      <Button
+        href="https://www.stalmarck.com/"
+        target="_blank"
+        style={{
+          marginBottom: "1rem",
+          marginRight: "1rem",
+        }}
+      >
+        <SRO />
+        <span style={{ color: "#11ffbd", marginLeft: "0.5rem" }}>
+          Matematik för människan
+        </span>
       </Button>
     </Stack>
   );
