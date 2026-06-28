@@ -36,7 +36,7 @@ const OliverLayout = ({
         <meta property="og:url" content="https://www.sakur.se/oliver" />
         <meta
           property="og:description"
-          content="My name is Oliver Levay and I like developing websites. Here you can read more about me."
+          content="Oliver Levay — full-stack developer and builder. From web apps to AI and computer vision for heavy industry. Here you can read more about me."
         />
         <meta
           property="og:image"
@@ -45,7 +45,7 @@ const OliverLayout = ({
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Stack spacing={1}>
-        <Typography variant="h2">Fullstack Developer</Typography>
+        <Typography variant="h2">Full-stack Developer &amp; Builder</Typography>
 
         <Social />
         <Link href="mailto:oliver@sakur.se">oliver@sakur.se</Link>

@@ -55,9 +55,25 @@ export default function MyApp({
   }, [prefersDarkMode]);
 
   const theme = useMemo(() => {
+    // Readable, on-brand link colour that adapts to the active colour scheme.
+    const linkColor = mode === "dark" ? "#5ecfe8" : "#0e6e96";
     const mergedTheme = {
       ...defaultTheme,
       palette: { ...defaultTheme.palette, mode },
+      components: {
+        ...defaultTheme.components,
+        MuiCssBaseline: {
+          styleOverrides: {
+            a: {
+              color: linkColor,
+              textDecoration: "none",
+            },
+            "a:hover": {
+              textDecoration: "underline",
+            },
+          },
+        },
+      },
     };
     return createTheme(mergedTheme);
   }, [mode]);
