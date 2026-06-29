@@ -9,17 +9,13 @@ import ScapeLogo from "./logos/Scape";
 
 const Projects = () => {
   return (
-    <Stack direction="row" flexWrap="wrap" justifyContent="center" alignItems="center">
-      <Button
-        href="https://www.foresightdatamachines.com/"
-        target="_blank"
-        style={{
-          marginBottom: "1rem",
-          marginRight: "1rem",
-        }}
-      >
-        <ForesightLogo />
-      </Button>
+    <Stack
+      direction="row"
+      flexWrap="wrap"
+      justifyContent="center"
+      alignItems="center"
+      sx={{ width: "100%" }}
+    >
       <Button
         href="https://scape.app/"
         target="_blank"
@@ -29,6 +25,16 @@ const Projects = () => {
         }}
       >
         <ScapeLogo />
+      </Button>
+      <Button
+        href="https://www.foresightdatamachines.com/"
+        target="_blank"
+        style={{
+          marginBottom: "1rem",
+          marginRight: "1rem",
+        }}
+      >
+        <ForesightLogo />
       </Button>
       <Button
         href="https://www.wearecareless.com/"

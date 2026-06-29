@@ -55,9 +55,10 @@ const Decorations = () => (
           bottom: p.bottom,
           left: p.left,
           right: p.right,
-          width: p.size,
-          height: p.size,
-          opacity: p.opacity,
+          // Scale petals down on small screens so they don't crowd the content.
+          width: { xs: Math.round(p.size * 0.45), md: p.size },
+          height: { xs: Math.round(p.size * 0.45), md: p.size },
+          opacity: { xs: p.opacity * 0.7, md: p.opacity },
           transform: `rotate(${p.rotate}deg)`,
         }}
       >

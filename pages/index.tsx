@@ -12,7 +12,7 @@ const Home: NextPage = () => {
     <Layout title="Sakur" center>
       <Seo
         title="Sakur | Web & AI Development Studio in Sweden"
-        description="Sakur is a Swedish development studio by Oliver Levay and Adam Tovatt. We build fast, polished web applications, web APIs and AI features, and take our own products from idea to launch."
+        description="Sakur is a Swedish development studio by Oliver Levay and Adam Tovatt. We help clients ship fast, polished web applications, mobile apps, web APIs and AI features, from first idea to launch."
         path="/"
         jsonLd={{
           '@context': 'https://schema.org',
@@ -51,17 +51,17 @@ const Home: NextPage = () => {
           </Link>
         </Stack>
 
-        <Stack spacing={1.5} alignItems="center" sx={{ maxWidth: 600 }}>
+        <Stack spacing={1.5} alignItems="center" sx={{ width: '100%', maxWidth: 600 }}>
           <Typography variant="h3">About us</Typography>
           <Typography color="text.secondary">
             Sakur is Oliver and Adam, two developers who have been building
-            things together since childhood. We help clients ship web
-            applications, web APIs and AI features, and we take our own products
-            from idea to launch.
+            things together since childhood. We help our clients ship web
+            applications, mobile apps, web APIs and AI features, taking projects
+            from first idea to launch.
           </Typography>
         </Stack>
 
-        <Stack spacing={2} alignItems="center" sx={{ maxWidth: 620 }}>
+        <Stack spacing={2} alignItems="center" sx={{ width: '100%', maxWidth: 620 }}>
           <Typography variant="h3">Projects</Typography>
           <Typography color="text.secondary">
             Here are some of the projects we have worked on.

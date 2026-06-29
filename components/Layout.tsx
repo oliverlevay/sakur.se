@@ -72,7 +72,11 @@ const Layout = ({
       {children}
       <Stack sx={{ width: '100%' }}>
         <Divider sx={{ margin: '1rem 0' }} />
-        <Typography variant="body2" color="text.secondary">
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          sx={{ textAlign: 'center' }}
+        >
           Copyright © {new Date().getFullYear()} Sakur AB.
         </Typography>
       </Stack>
