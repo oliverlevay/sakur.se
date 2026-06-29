@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
+import Seo from 'components/Seo';
 import Link from 'components/Link';
 import Layout from 'components/Layout';
 import { Typography, Stack, Box, Button } from '@mui/material';
@@ -10,21 +10,25 @@ import Projects from 'components/Projects';
 const Home: NextPage = () => {
   return (
     <Layout title="Sakur" center>
-      <Head>
-        <title>Sakur</title>
-        <meta property="og:title" content="Sakur" />
-        <meta property="og:url" content="https://www.sakur.se/" />
-        <meta
-          property="og:description"
-          content="Bringing ideas to life. We help our
-            clients with all their application needs."
-        />
-        <meta
-          property="og:image"
-          content="https://www.sakur.se/images/sakur-slogan.png"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+      <Seo
+        title="Sakur | Web & AI Development Studio in Sweden"
+        description="Sakur is a Swedish development studio by Oliver Levay and Adam Tovatt. We build fast, polished web applications, web APIs and AI features, and take our own products from idea to launch."
+        path="/"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          name: 'Sakur',
+          legalName: 'Sakur AB',
+          url: 'https://www.sakur.se',
+          logo: 'https://www.sakur.se/images/sakur-logo.png',
+          description:
+            'Development studio building web applications, web APIs and AI features.',
+          founder: [
+            { '@type': 'Person', name: 'Oliver Levay' },
+            { '@type': 'Person', name: 'Adam Tovatt' },
+          ],
+        }}
+      />
 
       <Stack spacing={6} alignItems="center" sx={{ width: '100%', textAlign: 'center' }}>
         <Typography variant="h2" sx={{ fontWeight: 800 }}>

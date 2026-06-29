@@ -59,7 +59,7 @@ const Oliver: NextPageWithLayout = () => {
         <Typography variant="h3">About me</Typography>
         <Typography>Hi! I'm glad you found me.</Typography>
         <Typography>
-          My name is Oliver Levay, a full-stack developer and builder. I've
+          My name is Oliver Levay, a full-stack product engineer and builder. I've
           been writing code since I was 11, when my childhood friend{' '}
           <Link href="/adam">Adam</Link> (now my Sakur co-founder) and I started
           making games. I never really stopped.

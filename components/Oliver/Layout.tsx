@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Seo from 'components/Seo';
 import Layout from 'components/Layout';
 import { Typography, Stack, Tabs, Tab } from '@mui/material';
 import Link from 'next/link';
@@ -30,23 +30,29 @@ const OliverLayout = ({
 
   return (
     <Layout location="Oliver" title="Oliver" maxWidth={1180}>
-      <Head>
-        <title>Oliver at Sakur</title>
-        <meta property="og:title" content="Oliver at Sakur" />
-        <meta property="og:url" content="https://www.sakur.se/oliver" />
-        <meta
-          property="og:description"
-          content="Oliver Levay, full-stack developer and builder. From web apps to AI and computer vision for heavy industry. Here you can read more about me."
-        />
-        <meta
-          property="og:image"
-          content="https://www.sakur.se/images/oliver-slogan.png"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+      <Seo
+        title="Oliver Levay | Full-Stack Product Engineer"
+        description="Oliver Levay is a full-stack product engineer and builder at Sakur. He ships web apps, AI features and computer-vision systems, from startups to heavy industry."
+        path="/oliver"
+        image="/images/oliver-slogan.png"
+        type="profile"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Person',
+          name: 'Oliver Levay',
+          jobTitle: 'Full-stack Product Engineer',
+          url: 'https://www.sakur.se/oliver',
+          worksFor: { '@type': 'Organization', name: 'Sakur AB' },
+          sameAs: [
+            'https://github.com/oliverlevay',
+            'https://twitter.com/oliverlevays',
+            'https://www.linkedin.com/in/oliver-levay',
+          ],
+        }}
+      />
       <Stack spacing={1}>
         <Typography variant="h2" color="text.secondary">
-          Full-stack Developer &amp; Builder
+          Full-stack Product Engineer &amp; Builder
         </Typography>
 
         <Social />
