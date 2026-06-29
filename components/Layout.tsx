@@ -56,16 +56,12 @@ const Layout = ({
         <Stack direction="row" alignItems="center" spacing={2}>
           <Box
             sx={{
-              width: { xs: 52, md: 64 },
-              height: { xs: 52, md: 64 },
+              width: { xs: 64, md: 88 },
+              height: { xs: 64, md: 88 },
               flexShrink: 0,
-              borderRadius: 2.5,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              padding: 0.75,
-              border: '1px solid rgba(255,255,255,0.10)',
-              backgroundColor: 'rgba(255,255,255,0.04)',
             }}
           >
             <SakurLogo />
