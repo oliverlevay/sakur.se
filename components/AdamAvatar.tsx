@@ -1,21 +1,12 @@
-import { Typography, Avatar, Stack, useTheme } from "@mui/material";
+import RevealAvatar from "components/RevealAvatar";
 
-const AdamAvatar = () => {
-  const theme = useTheme();
-  return (
-    <Stack alignItems="center" width="fit-content" title="Click me!">
-      <Avatar
-        sx={{ height: { xs: 120, md: 144 }, width: { xs: 120, md: 144 } }}
-        src="/images/adam-avatar-v2.jpg"
-      ></Avatar>
-      <Typography
-        color={theme.palette.text.primary}
-        style={{ textTransform: "none" }}
-      >
-        Adam
-      </Typography>
-    </Stack>
-  );
-};
+const AdamAvatar = () => (
+  <RevealAvatar
+    name="Adam"
+    real="/images/adam-avatar-v2.jpg"
+    ghibli="/images/adam-ghibli.jpg"
+    ghibliTransform="translateY(5%) scale(1.06)"
+  />
+);
 
 export default AdamAvatar;

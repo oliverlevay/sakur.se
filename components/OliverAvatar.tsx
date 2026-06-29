@@ -1,21 +1,11 @@
-import { Typography, Avatar, Stack, useTheme } from "@mui/material";
+import RevealAvatar from "components/RevealAvatar";
 
-const OliverAvatar = () => {
-  const theme = useTheme();
-  return (
-    <Stack alignItems="center" width="fit-content" title="Click me!">
-      <Avatar
-        sx={{ height: { xs: 120, md: 144 }, width: { xs: 120, md: 144 } }}
-        src="/images/oliver-avatar-v2.jpg"
-      ></Avatar>
-      <Typography
-        color={theme.palette.text.primary}
-        style={{ textTransform: "none" }}
-      >
-        Oliver
-      </Typography>
-    </Stack>
-  );
-};
+const OliverAvatar = () => (
+  <RevealAvatar
+    name="Oliver"
+    real="/images/oliver-avatar-v2.jpg"
+    ghibli="/images/oliver-ghibli.jpg"
+  />
+);
 
 export default OliverAvatar;
