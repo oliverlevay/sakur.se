@@ -1,21 +1,22 @@
 import * as React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import createEmotionServer from "@emotion/server/create-instance";
-import defaultTheme from "../src/theme";
 import createEmotionCache from "../src/createEmotionCache";
 
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" style={{ colorScheme: "dark", backgroundColor: "#0b0e14" }}>
         <Head>
-          {/* PWA primary color */}
-          <meta
-            name="theme-color"
-            // @ts-ignore
-            content={defaultTheme.palette.primary.main}
-          />
+          {/* PWA / browser chrome colour — matches the dark background. */}
+          <meta name="theme-color" content="#0b0e14" />
           <link rel="shortcut icon" href="/favicon.ico" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="anonymous"
+          />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
@@ -23,7 +24,7 @@ export default class MyDocument extends Document {
           {/* Inject MUI styles first to match with the prepend: true configuration. */}
           {(this.props as any).emotionStyleTags}
         </Head>
-        <body>
+        <body style={{ backgroundColor: "#0b0e14" }}>
           <Main />
           <NextScript />
         </body>

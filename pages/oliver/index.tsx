@@ -5,13 +5,28 @@ import { ReactElement, useEffect } from 'react';
 import { styled } from '@mui/system';
 import OliverLayout from 'components/Oliver/Layout';
 
-const MyCard = styled(Card)`
-  max-width: 30rem;
-  padding: 2rem;
-  p {
-    margin: 1rem 0;
-  }
-`;
+const MyCard = styled(Card)(({ theme }) => ({
+  maxWidth: '32rem',
+  padding: '1.75rem 2rem',
+  marginBottom: '1.25rem',
+  backdropFilter: 'blur(12px)',
+  WebkitBackdropFilter: 'blur(12px)',
+  backgroundColor:
+    theme.palette.mode === 'dark'
+      ? 'rgba(20, 25, 37, 0.72)'
+      : 'rgba(255, 255, 255, 0.78)',
+  transition: 'transform .2s ease, box-shadow .2s ease',
+  '&:hover': {
+    transform: 'translateY(-2px)',
+    boxShadow:
+      theme.palette.mode === 'dark'
+        ? '0 10px 30px rgba(0, 0, 0, 0.5)'
+        : '0 10px 30px rgba(0, 0, 0, 0.1)',
+  },
+  '& p': {
+    margin: '0.85rem 0',
+  },
+}));
 
 const Separator = styled(Box)`
   min-height: 100vh;
@@ -24,7 +39,13 @@ const Oliver: NextPageWithLayout = () => {
     canvas.style.bottom = '0';
     canvas.style.right = '0';
     document.body.appendChild(canvas);
-    startAnimating(canvas);
+    try {
+      startAnimating(canvas);
+    } catch (e) {
+      // No WebGL available — fail gracefully instead of crashing the page.
+      console.warn('3D background disabled:', e);
+      canvas.remove();
+    }
     return function cleanup() {
       canvas.remove();
       stopAnimating();

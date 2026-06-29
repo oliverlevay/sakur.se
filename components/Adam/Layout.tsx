@@ -14,8 +14,10 @@ const AdamLayout = ({
       <Head>
         <title>Adam | Sakur</title>
       </Head>
-      <Stack spacing={1}>
-        <Typography variant="h2">Backend Developer</Typography>
+      <Stack spacing={1.5} sx={{ maxWidth: '70ch' }}>
+        <Typography variant="h2" color="text.secondary">
+          Backend Developer
+        </Typography>
 
         <Social />
         <Link href="mailto:adam@sakur.se">adam@sakur.se</Link>

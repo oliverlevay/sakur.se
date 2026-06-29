@@ -2,22 +2,14 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'components/Link';
 import Layout from 'components/Layout';
-import { Typography, Stack, Card, Button } from '@mui/material';
-import { styled } from '@mui/system';
+import { Typography, Stack, Box, Button } from '@mui/material';
 import OliverAvatar from 'components/OliverAvatar';
 import AdamAvatar from 'components/AdamAvatar';
 import Projects from 'components/Projects';
-import SoftwareEngineer from 'components/Illustrations/SoftwareEngineer';
-
-const MyStack = styled(Stack)`
-  && {
-    margin: 1rem 0;
-  }
-`;
 
 const Home: NextPage = () => {
   return (
-    <Layout title="Sakur">
+    <Layout title="Sakur" center>
       <Head>
         <title>Sakur</title>
         <meta property="og:title" content="Sakur" />
@@ -33,45 +25,43 @@ const Home: NextPage = () => {
         />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <Typography variant="h2">Bringing ideas to life.</Typography>
-      <Stack direction="row" spacing={3}>
-        <Stack spacing={1} width="100%">
-          <Typography variant="h3" style={{ marginTop: '1rem' }}>
-            Lead developers
-          </Typography>
-          <Stack direction="row" spacing={3}>
-            <Link href="/oliver">
-              <Button>
-                <OliverAvatar />
-              </Button>
-            </Link>
-            <Link href="/adam">
-              <Button>
-                <AdamAvatar />
-              </Button>
-            </Link>
-          </Stack>
-          <MyStack spacing={2}>
-            <Typography variant="h3">About us</Typography>
-            <Typography>
-              Sakur consists of a passionate and talented team. We help our
-              clients with all their application needs.
-            </Typography>
-            <Typography>
-              We are especially comfortable in creating Web Applications and Web
-              APIs.
-            </Typography>
-          </MyStack>
-          <MyStack spacing={2}>
-            <Typography variant="h3">Projects</Typography>
-            <Typography>
-              Here are some of the projects we have worked on.
-            </Typography>
-            <Projects />
-          </MyStack>
+
+      <Stack spacing={6} alignItems="center" sx={{ width: '100%', textAlign: 'center' }}>
+        <Typography variant="h2" sx={{ fontWeight: 800 }}>
+          Bringing ideas to{' '}
+          <Box component="span" sx={{ color: 'primary.main' }}>
+            life.
+          </Box>
+        </Typography>
+
+        <Stack direction="row" spacing={5} justifyContent="center">
+          <Link href="/oliver">
+            <Button sx={{ borderRadius: 4, p: 1 }}>
+              <OliverAvatar />
+            </Button>
+          </Link>
+          <Link href="/adam">
+            <Button sx={{ borderRadius: 4, p: 1 }}>
+              <AdamAvatar />
+            </Button>
+          </Link>
         </Stack>
-        <Stack width={{ xs: 0, md: '75%' }}>
-          <SoftwareEngineer />
+
+        <Stack spacing={1.5} alignItems="center" sx={{ maxWidth: 600 }}>
+          <Typography variant="h3">About us</Typography>
+          <Typography color="text.secondary">
+            Sakur consists of a passionate and talented team. We help our
+            clients with all their application needs. We are especially
+            comfortable in creating Web Applications and Web APIs.
+          </Typography>
+        </Stack>
+
+        <Stack spacing={2} alignItems="center" sx={{ maxWidth: 620 }}>
+          <Typography variant="h3">Projects</Typography>
+          <Typography color="text.secondary">
+            Here are some of the projects we have worked on.
+          </Typography>
+          <Projects />
         </Stack>
       </Stack>
     </Layout>

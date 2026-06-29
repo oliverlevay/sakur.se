@@ -9,7 +9,7 @@ import ScapeLogo from "./logos/Scape";
 
 const Projects = () => {
   return (
-    <Stack direction="row" flexWrap="wrap">
+    <Stack direction="row" flexWrap="wrap" justifyContent="center" alignItems="center">
       <Button
         href="https://www.foresightdatamachines.com/"
         target="_blank"

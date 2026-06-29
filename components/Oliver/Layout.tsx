@@ -29,7 +29,7 @@ const OliverLayout = ({
   }, [activeTab]);
 
   return (
-    <Layout location="Oliver" title="Oliver">
+    <Layout location="Oliver" title="Oliver" maxWidth={1180}>
       <Head>
         <title>Oliver at Sakur</title>
         <meta property="og:title" content="Oliver at Sakur" />
@@ -45,7 +45,9 @@ const OliverLayout = ({
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Stack spacing={1}>
-        <Typography variant="h2">Full-stack Developer &amp; Builder</Typography>
+        <Typography variant="h2" color="text.secondary">
+          Full-stack Developer &amp; Builder
+        </Typography>
 
         <Social />
         <Link href="mailto:oliver@sakur.se">oliver@sakur.se</Link>
