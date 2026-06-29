@@ -22,16 +22,19 @@ const Layout = ({
       spacing={3}
       sx={{
         zIndex: 1,
+        position: 'relative',
         padding: { xs: '1.5rem 1.25rem', md: '3rem 3.5rem' },
         width: '100%',
         maxWidth,
         marginX: 'auto',
-        left: 0,
-        right: 0,
-        position: 'absolute',
+        // Hard guard: never allow sideways scrolling on narrow screens.
+        overflowX: 'clip',
         alignItems: center ? 'center' : 'stretch',
         h1: {
           fontSize: { xs: '2.75rem', md: 'clamp(3rem, 5vw, 4.25rem)' },
+          fontFamily: '"Playfair Display", Georgia, "Times New Roman", serif',
+          fontWeight: 700,
+          letterSpacing: '-0.01em',
         },
         h2: {
           fontSize: { xs: '1.6rem', md: '2rem' },
@@ -53,11 +56,11 @@ const Layout = ({
             <Typography color="text.primary">{location}</Typography>
           </Breadcrumbs>
         )}
-        <Stack direction="row" alignItems="center" spacing={2}>
+        <Stack direction="row" alignItems="center" spacing={1.5}>
           <Box
             sx={{
-              width: { xs: 64, md: 88 },
-              height: { xs: 64, md: 88 },
+              width: { xs: 48, md: 64 },
+              height: { xs: 48, md: 64 },
               flexShrink: 0,
               display: 'flex',
               alignItems: 'center',
