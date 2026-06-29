@@ -6,7 +6,7 @@ const AdamAvatar = () => {
     <Stack alignItems="center" width="fit-content" title="Click me!">
       <Avatar
         sx={{ height: { xs: 120, md: 144 }, width: { xs: 120, md: 144 } }}
-        src="/images/adam-avatar.jpg"
+        src="/images/adam-avatar-v2.jpg"
       ></Avatar>
       <Typography
         color={theme.palette.text.primary}
