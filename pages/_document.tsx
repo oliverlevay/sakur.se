@@ -8,7 +8,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en" style={{ colorScheme: "dark", backgroundColor: "#0b0e14" }}>
         <Head>
-          {/* PWA / browser chrome colour — matches the dark background. */}
+          {/* PWA / browser chrome colour, matches the dark background. */}
           <meta name="theme-color" content="#0b0e14" />
           <link rel="icon" href="/favicon.ico" sizes="any" />
           <link rel="icon" href="/favicon.svg" type="image/svg+xml" />

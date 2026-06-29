@@ -36,7 +36,7 @@ const OliverLayout = ({
         <meta property="og:url" content="https://www.sakur.se/oliver" />
         <meta
           property="og:description"
-          content="Oliver Levay — full-stack developer and builder. From web apps to AI and computer vision for heavy industry. Here you can read more about me."
+          content="Oliver Levay, full-stack developer and builder. From web apps to AI and computer vision for heavy industry. Here you can read more about me."
         />
         <meta
           property="og:image"

@@ -15,7 +15,7 @@ type Petal = {
   opacity: number;
 };
 
-// Deliberately placed, low-opacity petals — crisp vector shapes, no blur.
+// Deliberately placed, low-opacity petals: crisp vector shapes, no blur.
 const PETALS: Petal[] = [
   { top: '-3%', right: '5%', size: 360, rotate: 24, color: '#ff7fa6', opacity: 0.1 },
   { top: '26%', right: '-4%', size: 220, rotate: -18, color: '#e8c06a', opacity: 0.08 },
@@ -35,7 +35,7 @@ const Decorations = () => (
       pointerEvents: 'none',
     }}
   >
-    {/* A single, very faint brand tint — the only gradient left. */}
+    {/* A single, very faint brand tint, the only gradient left. */}
     <Box
       sx={{
         position: 'absolute',

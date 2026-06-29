@@ -30,7 +30,7 @@ export default function MyApp({
 }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);
 
-  // Dark-only — the theme no longer flips, so build it once.
+  // Dark-only: the theme no longer flips, so build it once.
   const theme = useMemo(() => createTheme(getDesignTokens("dark")), []);
 
   return (

@@ -50,9 +50,10 @@ const Home: NextPage = () => {
         <Stack spacing={1.5} alignItems="center" sx={{ maxWidth: 600 }}>
           <Typography variant="h3">About us</Typography>
           <Typography color="text.secondary">
-            Sakur consists of a passionate and talented team. We help our
-            clients with all their application needs. We are especially
-            comfortable in creating Web Applications and Web APIs.
+            Sakur is Oliver and Adam, two developers who have been building
+            things together since childhood. We help clients ship web
+            applications, web APIs and AI features, and we take our own products
+            from idea to launch.
           </Typography>
         </Stack>
 

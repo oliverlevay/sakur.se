@@ -4,6 +4,7 @@ import { startAnimating, stopAnimating } from 'src/3d/oliver3d';
 import { ReactElement, useEffect } from 'react';
 import { styled } from '@mui/system';
 import OliverLayout from 'components/Oliver/Layout';
+import Link from 'components/Link';
 
 const MyCard = styled(Card)(({ theme }) => ({
   maxWidth: '32rem',
@@ -42,7 +43,7 @@ const Oliver: NextPageWithLayout = () => {
     try {
       startAnimating(canvas);
     } catch (e) {
-      // No WebGL available — fail gracefully instead of crashing the page.
+      // No WebGL available: fail gracefully instead of crashing the page.
       console.warn('3D background disabled:', e);
       canvas.remove();
     }
@@ -59,7 +60,8 @@ const Oliver: NextPageWithLayout = () => {
         <Typography>Hi! I'm glad you found me.</Typography>
         <Typography>
           My name is Oliver Levay, a full-stack developer and builder. I've
-          been writing code since I was 11, when a childhood friend and I started
+          been writing code since I was 11, when my childhood friend{' '}
+          <Link href="/adam">Adam</Link> (now my Sakur co-founder) and I started
           making games. I never really stopped.
         </Typography>
         <Typography>
@@ -151,11 +153,13 @@ const Oliver: NextPageWithLayout = () => {
           LTH, Lund University.
         </Typography>
         <Typography>
-          For my thesis I built ScrapAwear, an AR safety system on the Meta
-          Quest 3, backed by ultra-wideband positioning, that guides workers'
-          attention to moving hazards in heavy industry. A user study (n=16)
-          showed it helped people spot dangers outside their field of view about
-          893&nbsp;ms faster than a minimap.
+          For my thesis I built ScrapAwear, an AR safety system for heavy
+          industry on the Meta Quest 3. It uses ultra-wideband positioning to
+          track moving hazards and steer a worker's attention toward them. In a
+          user study (n=16) I compared two ways of pointing people to danger: a
+          3D directional arrow against a flat minimap. The arrow let people
+          notice hazards outside their field of view about 893&nbsp;ms faster,
+          with lower perceived workload.
         </Typography>
       </MyCard>
       <MyCard>
